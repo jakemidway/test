@@ -23,7 +23,8 @@
 
 'use strict';
 
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', 'Сколько фильмов вы уже посмотрели?');
+let numberOfFilms
+// numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', 'Сколько фильмов вы уже посмотрели?');
 
 let personalMovieDB = {
     count: numberOfFilms,
@@ -34,18 +35,18 @@ let personalMovieDB = {
 };
 
 
+for (let i = 0; i < 2; i++) {
+
+    let a = prompt('Один из последних просмотренных фильмов?', '');
+    let b = prompt('На сколько оцените его?', '');
 
 
+    if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+    } else {
+        i--
+    }
 
-
-let a = prompt('Один из последних просмотренных фильмов?', '');
-let b = prompt('На сколько оцените его?', '');
-let c = prompt('Один из последних просмотренных фильмов?', '');
-let d = prompt('На сколько оцените его?', '');
-
-
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
-
+}
 
 console.log(personalMovieDB)
